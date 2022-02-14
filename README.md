@@ -1,6 +1,6 @@
 # EECS1022_Project
 
-##Team Members:
+## Team Members:
 
 - Name: Dan Voicu
 Email: danvoicu@my.yorku.ca
