@@ -28,9 +28,9 @@ Stock Market
 ## Project Description
 We are building a stock market app that will extract data from an API. It will display graphs and can provide the user with certain stock calculations  such as PE ratios, market capitalizations and more. The user will be able to search, view, and bookmark certain stocks. Additionally, the app will contain a drop-down menu where the user can view their bookmarked stocks. Furthermore, the user will be able to set the app to send notifications for when a stock is up or down a certain percentage.
 
-##Functional Requirements
+## Functional Requirements
 
-###User interface requirements:
+### User interface requirements:
 
 - Users can see the PE ratio, market capitalization, and dividend yield of individual stocks (see information about the stock).
 - Users can bookmark their favourite stocks up to 3 and access them easily.
@@ -45,7 +45,7 @@ We are building a stock market app that will extract data from an API. It will d
 - Stock graphs will display the colour red when they have been declining and the colour green when they have been growing in the set time-frame.
 
 
-###Programing Requirements
+### Programing Requirements
 - Our app will borrow data from the Google Finance API
 - The app will run on Android and will be developed in Java
 - The application will only have a limited selection of stocks displaying stocks from the most popular stock indexes. 
