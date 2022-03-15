@@ -18,7 +18,7 @@ Lecture section: N
 Lab Section: 03
 
 - Name: Thi Hanh Hoa Nguyen
-Email: hoa1797@my.yorku.ca
+Email: hoa1797@my.yorku.ca 
 Lecture section: N
 Lab Section: 02
 
