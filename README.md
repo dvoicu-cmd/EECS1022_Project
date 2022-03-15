@@ -46,7 +46,7 @@ We are building a stock market app that will extract data from an API. It will d
 
 
 ### Programing Requirements
-- Our app will borrow data from the Google Finance API
-- The app will run on Android and will be developed in Java
+- Our app will borrow data from the Google Finance API.
+- The app will run on Android and will be developed in Java.
 - The application will only have a limited selection of stocks displaying stocks from the most popular stock indexes. 
-- The app can be properly displayed in landscape and portrait
+- The app can be properly displayed in landscape and portrait.
