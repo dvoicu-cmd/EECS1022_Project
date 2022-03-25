@@ -24,7 +24,10 @@
         <activity
             android:name=".sideMenu"
             android:exported="true">
-
+        </activity>
+        <activity
+            android:name=".stockInformation"
+            android:exported="true">
         </activity>
     </application>
 </manifest>

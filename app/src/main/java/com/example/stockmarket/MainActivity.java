@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                 //Handle the following
                 //This is where you add information about (adapter.getItem(position))
-                openSideMenu();
+                openStockInformation(position);
             }
         });
 
@@ -92,6 +92,12 @@ public class MainActivity extends AppCompatActivity {
     //Method that opens the pop up menu
     public void openSideMenu(){
         Intent activity = new Intent(this, sideMenu.class);
+        startActivity(activity);
+    }
+
+    public void openStockInformation(int position){
+        Intent activity = new Intent(this, stockInformation.class);
+        activity.putExtra("stockPos",position);
         startActivity(activity);
     }
 
