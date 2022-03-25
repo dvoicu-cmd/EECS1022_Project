@@ -1,10 +1,14 @@
 package com.example.stockmarket;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 
@@ -45,28 +49,48 @@ public class MainActivity extends AppCompatActivity {
         listView.setAdapter(adapter);
 
         // For search box
-        theFilter.addTextChangedListener(new TextWatcher()
-        {
+        theFilter.addTextChangedListener(new TextWatcher() {
             @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2)
-            {
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
             }
 
             @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2)
-            {
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 (MainActivity.this).adapter.getFilter().filter(charSequence);
 
             }
 
             @Override
-            public void afterTextChanged(Editable editable)
-            {
+            public void afterTextChanged(Editable editable) {
 
+            }
+        });
+
+        //For Side Btn
+        Button btn = (Button) findViewById(R.id.SideBtn); //Creating variable of type button
+        btn.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) { //The event
+                openSideMenu();
             }
         });
 
 
     }
+
+    //Use this method to open new activities
+    public void openActivity(Object newActivity) {
+        //Intent activity = new Intent(this, newActivity.class);
+        //startActivity(activity);
+
+    }
+
+    public void openSideMenu() {
+        Intent activity = new Intent(this, sideMenu.class);
+        startActivity(activity);
+    }
+
 }
+
