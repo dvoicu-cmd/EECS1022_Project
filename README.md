@@ -34,8 +34,8 @@ We are building a stock market app that will extract data from an API. It will d
 
 - Users can see the PE ratio, market capitalization, and dividend yield of individual stocks (see information about the stock).
 - Users can bookmark their favourite stocks up to 3 and access them easily.
-- The application will have a “Dropdown” menu on the left side of the screen.
-- Users will be able to search stocks by their stock ticker symbols.
+~~- The application will have a “Dropdown” menu on the left side of the screen. ~~
+~~- Users will be able to search stocks by their stock ticker symbols. ~~
 - The Android app will display the current value of the searched stock by default.
 - The app will display the change in stock value over different set time-frames such as  7 days, 1 month, 6 months, and up to 1 year.
 - The app will be able to extract some information from the API and display a description of the company.
@@ -47,6 +47,6 @@ We are building a stock market app that will extract data from an API. It will d
 
 ### Programing Requirements
 - Our app will borrow data from the Google Finance API.
-- The app will run on Android and will be developed in Java.
-- The application will only have a limited selection of stocks displaying stocks from the most popular stock indexes. 
+~~- The app will run on Android and will be developed in Java. ~~
+~~- The application will only have a limited selection of stocks displaying stocks from the most popular stock indexes. ~~
 - The app can be properly displayed in landscape and portrait.
