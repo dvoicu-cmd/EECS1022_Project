@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.stockmarket">
 
-    <!-- For the group: when making a new activity make sure to declare it between the application tags when an activity tag -->
+    <!-- For the group: when making a new activity make sure to declare it between the application tags and between an activity tag -->
     <!-- When making your class for an activity, make sure to extend it to AppCompatActivity and override the onCreate() method -->
 
     <application

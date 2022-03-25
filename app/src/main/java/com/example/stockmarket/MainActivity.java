@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -76,14 +77,23 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //When a list element is clicked
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                //Handle the following
+                //This is where you add information about (adapter.getItem(position))
+                openSideMenu();
+            }
+        });
 
-    }
+    } //End of onCreate
 
     //Method that opens the pop up menu
-    public void openSideMenu() {
+    public void openSideMenu(){
         Intent activity = new Intent(this, sideMenu.class);
         startActivity(activity);
     }
 
-}
+}//End of Main Activity
 
