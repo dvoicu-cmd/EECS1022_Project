@@ -70,7 +70,6 @@ public class MainActivity extends AppCompatActivity {
         //For Side Btn
         Button btn = (Button) findViewById(R.id.SideBtn); //Creating variable of type button
         btn.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View v) { //The event
                 openSideMenu();
@@ -80,13 +79,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    //Use this method to open new activities
-    public void openActivity(Object newActivity) {
-        //Intent activity = new Intent(this, newActivity.class);
-        //startActivity(activity);
-
-    }
-
+    //Method that opens the pop up menu
     public void openSideMenu() {
         Intent activity = new Intent(this, sideMenu.class);
         startActivity(activity);
