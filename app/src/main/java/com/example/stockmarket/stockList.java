@@ -3,6 +3,9 @@ package com.example.stockmarket;
 import java.util.ArrayList;
 import java.util.List;
 
+//This is our consistent list of stocks to the project.
+//With this class you will be able to access the stocks and their positional information from this class.
+
 public class stockList {
     ArrayList stocklist = new ArrayList<String>();
 
