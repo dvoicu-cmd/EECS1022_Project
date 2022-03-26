@@ -19,8 +19,10 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     ListView listView;
-    List stocklist = new ArrayList();
+    //List stocklist = new ArrayList();
     private ArrayAdapter adapter;
+    stockList stocks = new stockList(); //Initiate the new stock list here
+    ArrayList<String> stocklist = stocks.returnStockList(); //
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,20 +32,6 @@ public class MainActivity extends AppCompatActivity {
         // Finding the widgets
         listView = (ListView) findViewById(R.id.list_view);
         EditText theFilter = (EditText) findViewById(R.id.searchFilter);
-
-        // Adding stocks
-        stocklist.add("Intel");
-        stocklist.add("Microsoft");
-        stocklist.add("Apple");
-        stocklist.add("Google");
-        stocklist.add("Facebook");
-        stocklist.add("Disney");
-        stocklist.add("Tesla");
-        stocklist.add("Exxon");
-        stocklist.add("Nvidia");
-        stocklist.add("Qualcomm");
-        stocklist.add("Netflix");
-        stocklist.add("Micron");
 
         // For list
         adapter = new ArrayAdapter(MainActivity.this, R.layout.list_item_layout, stocklist);
