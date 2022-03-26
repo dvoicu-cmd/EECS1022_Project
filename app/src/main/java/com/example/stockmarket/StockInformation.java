@@ -1,16 +1,16 @@
 package com.example.stockmarket;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
-import java.util.List;
 
-public class stockInformation extends AppCompatActivity {
+public class StockInformation extends AppCompatActivity {
 
     //Initiate the list of stocks here
-    stockList stocks = new stockList();
+    AppData stocks = new AppData();
     ArrayList<String> stockData = stocks.returnStockList(); //The list of stocks is stored here
     int stockPos = -1; //Stock position data is stored here
 
@@ -21,6 +21,8 @@ public class stockInformation extends AppCompatActivity {
         setContentView(R.layout.stock_information);
         setPosData();
         String s = stockData.get(stockPos);
+        returnMain();
+
     }
 
     //sets the position given position of a stock
@@ -31,5 +33,12 @@ public class stockInformation extends AppCompatActivity {
             stockPos = value; //Sets the position
         }
     }
+
+    private void returnMain(){
+        Intent activity = new Intent(this, MainActivity.class);
+        activity.putExtra("stockPos", stockPos);
+        startActivity(activity);
+    }
+
 
 }

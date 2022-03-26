@@ -14,15 +14,19 @@ import android.widget.EditText;
 import android.widget.ListView;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    ListView listView;
-    //List stocklist = new ArrayList();
-    private ArrayAdapter adapter;
-    stockList stocks = new stockList(); //Initiate the new stock list here
-    ArrayList<String> stocklist = stocks.returnStockList(); //
+    ListView listView; //List view on layout
+    private ArrayAdapter adapter; //Array Adaptor for the list
+    AppData stocks = new AppData(); //Initiate the new stock list here
+    ArrayList<String> stockList = stocks.returnStockList();
+
+
+
+    //Doing a little testing:
+    int stockPos = -1;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         EditText theFilter = (EditText) findViewById(R.id.searchFilter);
 
         // For list
-        adapter = new ArrayAdapter(MainActivity.this, R.layout.list_item_layout, stocklist);
+        adapter = new ArrayAdapter(MainActivity.this, R.layout.list_item_layout, stockList);
         listView.setAdapter(adapter);
 
         // For search box
@@ -77,14 +81,26 @@ public class MainActivity extends AppCompatActivity {
 
     } //End of onCreate
 
-    //Method that opens the pop up menu
+//    @Override
+//    protected void onDestroy() {
+//        super.onDestroy();
+//
+//    }
+//
+//
+
+    /*
+     * Methods that are used for changing activities and passing data through the activities
+     */
+
+    //Open SideMenu
     public void openSideMenu(){
-        Intent activity = new Intent(this, sideMenu.class);
+        Intent activity = new Intent(this, SideMenu.class);
         startActivity(activity);
     }
 
     public void openStockInformation(int position){
-        Intent activity = new Intent(this, stockInformation.class);
+        Intent activity = new Intent(this, StockInformation.class);
         activity.putExtra("stockPos",position);
         startActivity(activity);
     }

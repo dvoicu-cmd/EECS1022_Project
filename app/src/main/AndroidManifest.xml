@@ -22,11 +22,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".sideMenu"
+            android:name=".SideMenu"
             android:exported="true">
         </activity>
         <activity
-            android:name=".stockInformation"
+            android:name=".StockInformation"
             android:exported="true">
         </activity>
     </application>
