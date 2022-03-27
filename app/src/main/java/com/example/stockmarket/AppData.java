@@ -15,6 +15,7 @@ import java.util.TreeSet;
 public class AppData {
     List stockList = new ArrayList<String>();
     Map bookMarks = new HashMap<Integer,String>(); //Integer = key, String = value, | key = the position of the stock in the arrayList, value = the name of stock.
+    boolean firstBoot = true;
 
     public AppData(){
         //Add Stocks here
@@ -32,6 +33,14 @@ public class AppData {
         stockList.add("Micron");
     }
 
+    //Methods that control the boot variable
+    public void firstBoot(){
+        firstBoot = false;
+    }
+    public boolean firstBootState(){
+        return firstBoot;
+    }
+
     public ArrayList<String> returnStockList(){
         return (ArrayList) stockList;
     }
@@ -39,11 +48,17 @@ public class AppData {
     //Adds a stock at a given position value to the bookmark map
     //v = position value of the array list
     public void addToBookmark(int v){
-        //First extract data from stockList with given inputs
+        //First extract data from stockList with given input
         Integer value = v;
         String key = (String) stockList.get(v);
         //Then put the values into the map
         bookMarks.put(value,key);
+    }
+
+    //Removes a stock at a given position value to the bookmark map
+    public void removeFromBookmark(int v){
+        Integer value = v;
+        bookMarks.remove(v);
     }
 
     //Returns a list of bookedMarked stocks
@@ -61,18 +76,19 @@ public class AppData {
     //Stores the inputted array list into the hashmap
     public void storeBookMarks(ArrayList<String> input){
         //Find pos/key value based on the list then store it with a key value pair
+        int f = input.size();
         bookMarks.clear();
-        for(int i = 0; i<input.size(); i++){
-            String value = input.get(i);
-            int key = -1;
-            key = stockList.indexOf(value);
-            if(key == -1){
-                throw new NullPointerException(); //one of the values was not was not the same as the list
+            for(int i = 0; i<input.size(); i++){
+                String value = input.get(i);
+                int key = -1;
+                key = stockList.indexOf(value);
+                if(key == -1){
+                    throw new NullPointerException(); //one of the values was not was not the same as the list
+                }
+                else {
+                    bookMarks.put(key,value);
+                }
             }
-            else {
-                bookMarks.put(key,value);
-            }
-        }
     }
 
 }

@@ -19,8 +19,12 @@ public class MainActivity extends AppCompatActivity {
 
     ListView listView; //List view on layout
     private ArrayAdapter adapter; //Array Adaptor for the list
-    AppData data = new AppData(); //Initiate the new stock list here
+    AppData data = new AppData(); //Initiate the app data
     ArrayList<String> stockList = data.returnStockList();
+
+    ArrayList<String> s;
+    boolean bo;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,11 +57,6 @@ public class MainActivity extends AppCompatActivity {
             public void afterTextChanged(Editable editable) {}
         });
 
-        /**
-         * Handle the stock data (if there is any)
-         */
-
-
 
         /**
          * OnClick handler methods
@@ -74,36 +73,57 @@ public class MainActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                //Handle the following
-                //This is where you add information about (adapter.getItem(position))
                 openStockInformation(position);
             }
         });
 
+        /**
+         * Handle the data after there was a click (if there is any)
+         */
+        //SHOW IT HERE:
+        if(data.firstBootState() == false){
+            Bundle extras = getIntent().getExtras();
+            ArrayList<String> s = extras.getStringArrayList("bookmarks");
+        }
+        data.firstBoot();
     } //End of onCreate
 
     /**
      * Methods that are used for changing activities and passing data through the activities
      */
+
+
+
+    /*
+     * DATA OUTPUTS
+     */
+
     //Open SideMenu
     public void openSideMenu(){
         Intent activity = new Intent(this, SideMenu.class);
+        //de bug: add facebook to list
+        data.addToBookmark(4);
+        activity.putExtra("bookmarks", data.returnBookMarks());
+        activity.putExtra("firstboot",data.firstBootState());
         startActivity(activity);
     }
 
     public void openStockInformation(int position){
         Intent activity = new Intent(this, StockInformation.class);
         activity.putExtra("stockPos",position);
-        //Testing:
-        data.addToBookmark(4);
         activity.putExtra("bookmarks",data.returnBookMarks());
         startActivity(activity);
     }
 
+
+    /*
+     * DATA INPUTS
+     */
     private void checkOfData(){
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
-          //  int value = extras.get("stockPos");
+            s = extras.getStringArrayList("bookmarks");
+            bo = extras.getBoolean("firstboot");
         }
     }
 

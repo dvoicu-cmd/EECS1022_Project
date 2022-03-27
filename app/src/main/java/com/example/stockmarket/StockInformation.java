@@ -9,31 +9,20 @@ import java.util.ArrayList;
 
 public class StockInformation extends AppCompatActivity {
 
-    //Initiate the list of stocks here
+    //Initiate the app data
     AppData data = new AppData();
-    ArrayList<String> stockData = data.returnStockList(); //The list of stocks is stored here
     int stockPos = -1; //Stock position data is stored here
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //Set the activity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.stock_information);
-        setPosData();
-        String s = stockData.get(stockPos);
-
-        Bundle extras = getIntent().getExtras();
-        if (extras != null){
-            ArrayList<String> keys = extras.getStringArrayList("bookmarks"); //Incoming bookmark data
-            data.storeBookMarks(keys);
-        }
-
-        Object thing = data.returnBookMarks();
-
-        returnMain();
-
     }
+
+    /**
+     * Methods that are used for changing activities and passing data through the activities
+     */
 
     //sets the position given position of a stock
     private void setPosData(){
@@ -44,9 +33,11 @@ public class StockInformation extends AppCompatActivity {
         }
     }
 
+    //Returns to the main activity
     private void returnMain(){
         Intent activity = new Intent(this, MainActivity.class);
         activity.putExtra("stockPos", stockPos);
+        activity.putExtra("bookmarks",data.returnBookMarks());
         startActivity(activity);
     }
 
