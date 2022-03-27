@@ -17,6 +17,7 @@ public class AppData {
     Map bookMarks = new HashMap<Integer,String>(); //Integer = key, String = value, | key = the position of the stock in the arrayList, value = the name of stock.
 
     public AppData(){
+        //Add Stocks here
         stockList.add("Intel");
         stockList.add("Microsoft");
         stockList.add("Apple");
@@ -56,4 +57,22 @@ public class AppData {
         }
         return outPut;
     }
+
+    //Stores the inputted array list into the hashmap
+    public void storeBookMarks(ArrayList<String> input){
+        //Find pos/key value based on the list then store it with a key value pair
+        bookMarks.clear();
+        for(int i = 0; i<input.size(); i++){
+            String value = input.get(i);
+            int key = -1;
+            key = stockList.indexOf(value);
+            if(key == -1){
+                throw new NullPointerException(); //one of the values was not was not the same as the list
+            }
+            else {
+                bookMarks.put(key,value);
+            }
+        }
+    }
+
 }
