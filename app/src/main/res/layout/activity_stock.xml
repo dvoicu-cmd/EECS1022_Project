@@ -8,6 +8,7 @@ tools:context=".StockActivity">
 
 <!--line graph view where we will
     be displaying our data-->
+
     <com.jjoe64.graphview.GraphView
         android:id="@+id/idGraphView"
         android:layout_width="wrap_content"
@@ -15,9 +16,9 @@ tools:context=".StockActivity">
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="49dp"
-        android:layout_marginTop="104dp"
-        android:layout_marginEnd="47dp" />
+        android:layout_marginStart="57dp"
+        android:layout_marginTop="102dp"
+        android:layout_marginEnd="39dp" />
 
     <Button
         android:id="@+id/button2"

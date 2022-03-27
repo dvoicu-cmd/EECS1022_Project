@@ -17,39 +17,24 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    ListView listView;
-    private List<String> stocklist = new ArrayList<>();
-    private ArrayAdapter adapter;
-
+    ArrayAdapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         // Finding the widgets
-        listView = (ListView) findViewById(R.id.list_view);
+        ListView listView = (ListView) findViewById(R.id.list_view);
         EditText theFilter = (EditText) findViewById(R.id.searchFilter);
 
-        // Adding stocks
-        stocklist.add("Intel");
-        stocklist.add("Microsoft");
-        stocklist.add("Apple");
-        stocklist.add("Google");
-        stocklist.add("Facebook");
-        stocklist.add("Disney");
-        stocklist.add("Tesla");
-        stocklist.add("Exxon");
-        stocklist.add("Nvidia");
-        stocklist.add("Qualcomm");
-        stocklist.add("Netflix");
-        stocklist.add("Micron");
-
-        //for stock data
-        Stocks stocks = new Stocks(stocklist);
-        stocks.getStockForMonth("Intel", 2);
+        // getting stocks values
+        List<String> stockNameList = new ArrayList<>();
+        List<Stock> stocks = StockList.getInstance().getStocks();
+        for (Stock s : stocks)
+            stockNameList.add(s.getName());
 
         // For list
-        adapter = new ArrayAdapter(MainActivity.this, R.layout.list_item_layout, stocklist);
+        adapter = new ArrayAdapter(MainActivity.this, R.layout.list_item_layout, stockNameList);
         listView.setAdapter(adapter);
 
         // For search box
@@ -74,7 +59,6 @@ public class MainActivity extends AppCompatActivity {
         CharSequence stockName = stock.getText();
         Intent i = new Intent(getApplicationContext(),StockActivity.class);
         i.putExtra("stockName",stockName);
-        //i.putExtra("stockList",stocklist);
         startActivity(i);
     }
 }
