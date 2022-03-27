@@ -12,8 +12,10 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -36,17 +38,27 @@ public class MainActivity extends AppCompatActivity {
          * Implementation for scrollable list
          */
         // Finding the widgets
-        listView = (ListView) findViewById(R.id.list_view);
+        ListView listView = (ListView) findViewById(R.id.list_view);
         EditText theFilter = (EditText) findViewById(R.id.searchFilter);
 
         //For the list
         adapter = new ArrayAdapter(MainActivity.this, R.layout.list_item_layout, stockList);
+
+        // getting stocks values
+        List<String> stockNameList = new ArrayList<>();
+        List<Stock> stocks = StockList.getInstance().getStocks();
+        for (Stock s : stocks)
+            stockNameList.add(s.getName());
+
+        // For list
+        adapter = new ArrayAdapter(MainActivity.this, R.layout.list_item_layout, stockNameList);
         listView.setAdapter(adapter);
 
         //Create the list
         theFilter.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -76,16 +88,20 @@ public class MainActivity extends AppCompatActivity {
                 openStockInformation(position);
             }
         });
+    }
+
 
         /**
          * Handle the data after there was a click (if there is any)
          */
-        //SHOW IT HERE:
-        if(data.firstBootState() == false){
-            Bundle extras = getIntent().getExtras();
-            ArrayList<String> s = extras.getStringArrayList("bookmarks");
-        }
-        data.firstBoot();
+
+    public void stockClickHandler(View v){
+        TextView stock = (TextView) v;
+        CharSequence stockName = stock.getText();
+        Intent i = new Intent(getApplicationContext(),StockActivity.class);
+        i.putExtra("stockName",stockName);
+        startActivity(i);
+
     } //End of onCreate
 
     /**
@@ -106,6 +122,7 @@ public class MainActivity extends AppCompatActivity {
         activity.putExtra("bookmarks", data.returnBookMarks());
         activity.putExtra("firstboot",data.firstBootState());
         startActivity(activity);
+
     }
 
     public void openStockInformation(int position){

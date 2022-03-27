@@ -4,9 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import java.util.ArrayList;
 
 public class SideMenu extends AppCompatActivity {
@@ -53,7 +51,7 @@ public class SideMenu extends AppCompatActivity {
      * INPUTS
      */
 
-    private void checkOfData(){
+    private void checkOfData() {
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             s = extras.getStringArrayList("bookmarks");
@@ -61,5 +59,4 @@ public class SideMenu extends AppCompatActivity {
 
         }
     }
-
 }
