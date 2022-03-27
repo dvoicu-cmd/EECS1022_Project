@@ -16,66 +16,75 @@ tools:context=".StockActivity">
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="57dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="102dp"
-        android:layout_marginEnd="39dp" />
+        android:layout_marginEnd="30dp" />
 
     <Button
-        android:id="@+id/button2"
-        android:layout_width="76dp"
+        android:id="@+id/closeButton"
+        android:layout_width="67dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="300dp"
-        android:layout_marginBottom="656dp"
-        android:text="X" />
-
-    <TextView
-        android:id="@+id/stockName"
-        android:layout_width="84dp"
-        android:layout_height="41dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="173dp"
-        android:layout_marginEnd="153dp"
-        android:layout_marginBottom="653dp"
-        android:text="TextView" />
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="336dp"
+        android:layout_marginBottom="672dp"
+        android:backgroundTint="@android:color/black"
+        android:text="@string/closeButton" />
+
+    <TextView
+        android:id="@+id/stockName"
+        android:layout_width="wrap_content"
+        android:layout_height="49dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="110dp"
+        android:layout_marginEnd="110dp"
+        android:layout_marginBottom="631dp"
+        android:gravity="center_horizontal"
+        android:text="TextView"
+        android:textSize="12pt"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/description"
-        android:layout_width="318dp"
-        android:layout_height="185dp"
+        android:layout_width="wrap_content"
+        android:layout_height="250dp"
         android:layout_below="@+id/idGraphView"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginEnd="33dp"
-        android:layout_marginBottom="130dp"
-        android:text="TextView" />
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="31dp"
+        android:layout_marginEnd="49dp"
+        android:layout_marginBottom="84dp"
+        android:text="TextView"
+        android:textSize="7pt" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/compareButton"
         android:layout_width="141dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="46dp"
-        android:layout_marginEnd="56dp"
-        android:layout_marginBottom="52dp"
-        android:layout_toStartOf="@+id/button5"
-        android:text="Compare" />
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="92dp"
+        android:layout_marginBottom="32dp"
+        android:layout_toStartOf="@+id/bookmarkButton"
+        android:backgroundTint="@android:color/black"
+        android:text="@string/compareButton" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/bookmarkButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="50dp"
-        android:layout_marginBottom="52dp"
-        android:text="Bookmark" />
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="32dp"
+        android:backgroundTint="@android:color/black"
+        android:text="@string/bookmarkButton" />
 
 </RelativeLayout>
