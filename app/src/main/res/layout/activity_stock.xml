@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".StockActivity">
+
+<!--line graph view where we will
+    be displaying our data-->
+    <com.jjoe64.graphview.GraphView
+        android:id="@+id/idGraphView"
+        android:layout_width="wrap_content"
+        android:layout_height="264dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="49dp"
+        android:layout_marginTop="104dp"
+        android:layout_marginEnd="47dp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="282dp"
+        android:layout_marginBottom="656dp"
+        android:text="Button" />
+
+    <TextView
+        android:id="@+id/stockName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="175dp"
+        android:layout_marginEnd="177dp"
+        android:layout_marginBottom="671dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="318dp"
+        android:layout_height="185dp"
+        android:layout_below="@+id/idGraphView"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="47dp"
+        android:layout_marginTop="49dp"
+        android:layout_marginEnd="46dp"
+        android:layout_marginBottom="129dp"
+        android:text="TextView" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="119dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="46dp"
+        android:layout_marginEnd="107dp"
+        android:layout_marginBottom="52dp"
+        android:layout_toStartOf="@+id/button5"
+        android:text="Button" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="112dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="45dp"
+        android:layout_marginBottom="52dp"
+        android:text="Button" />
+
+</RelativeLayout>
