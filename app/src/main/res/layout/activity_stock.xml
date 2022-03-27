@@ -22,24 +22,24 @@ tools:context=".StockActivity">
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="wrap_content"
+        android:layout_width="76dp"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="282dp"
+        android:layout_marginEnd="300dp"
         android:layout_marginBottom="656dp"
-        android:text="Button" />
+        android:text="X" />
 
     <TextView
         android:id="@+id/stockName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="84dp"
+        android:layout_height="41dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="175dp"
-        android:layout_marginEnd="177dp"
-        android:layout_marginBottom="671dp"
+        android:layout_marginStart="173dp"
+        android:layout_marginEnd="153dp"
+        android:layout_marginBottom="653dp"
         android:text="TextView" />
 
     <TextView
@@ -50,32 +50,32 @@ tools:context=".StockActivity">
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="47dp"
-        android:layout_marginTop="49dp"
-        android:layout_marginEnd="46dp"
-        android:layout_marginBottom="129dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="33dp"
+        android:layout_marginBottom="130dp"
         android:text="TextView" />
 
     <Button
         android:id="@+id/button4"
-        android:layout_width="119dp"
+        android:layout_width="141dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="46dp"
-        android:layout_marginEnd="107dp"
+        android:layout_marginEnd="56dp"
         android:layout_marginBottom="52dp"
         android:layout_toStartOf="@+id/button5"
-        android:text="Button" />
+        android:text="Compare" />
 
     <Button
         android:id="@+id/button5"
-        android:layout_width="112dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="45dp"
+        android:layout_marginEnd="50dp"
         android:layout_marginBottom="52dp"
-        android:text="Button" />
+        android:text="Bookmark" />
 
 </RelativeLayout>

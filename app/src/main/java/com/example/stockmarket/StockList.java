@@ -26,18 +26,60 @@ public class StockList {
 
         //descriptions
         List<String> stockDescs = new ArrayList<>();
-        stockDescs.add("Inte descl");
-        stockDescs.add("Microsoft desc");
-        stockDescs.add("Apple desc");
-        stockDescs.add("Google");
-        stockDescs.add("Facebook");
-        stockDescs.add("Disney");
-        stockDescs.add("Tesla");
-        stockDescs.add("Exxon");
-        stockDescs.add("Nvidia");
-        stockDescs.add("Qualcomm");
-        stockDescs.add("Netflix");
-        stockDescs.add("Micron");
+        stockDescs.add("Intel Corporation, stylized as intel, is an American multinational " +
+                "corporation and technology company headquartered in Santa Clara, California. " +
+                "It is the world's largest semiconductor chip manufacturer by revenue, and is the " +
+                "developer of the x86 series of microprocessors, the processors found in " +
+                "most personal computers.");
+        stockDescs.add("Microsoft Corporation is an American multinational technology corporation " +
+                "which produces computer software, consumer electronics, personal computers, " +
+                "and related services. Its best-known software products are the Microsoft Windows " +
+                "line of operating systems, the Microsoft Office suite, and the Internet Explorer " +
+                "and Edge web browsers.");
+        stockDescs.add("Apple Inc. is an American multinational technology company that specializes" +
+                " in consumer electronics, software and online services. Apple is the largest " +
+                "information technology company by revenue and, as of January 2021, it is the " +
+                "world's most valuable company, the fourth-largest personal computer vendor by " +
+                "unit sales and second-largest mobile phone manufacturer.");
+        stockDescs.add("Google LLC is an American multinational technology company that specializes" +
+                " in Internet-related services and products, which include a search engine, online" +
+                " advertising technologies, cloud computing, software, and hardware. It is " +
+                "considered one of the Big Five American information technology companies, " +
+                "alongside Amazon, Apple, Meta and Microsoft.");
+        stockDescs.add("Facebook is an American online social media and social networking service" +
+                " owned by Meta Platforms. Founded in 2004 by Mark Zuckerberg with fellow Harvard" +
+                " College students and roommates Eduardo Saverin, Andrew McCollum, Dustin " +
+                "Moskovitz, and Chris Hughes, its name comes from the face book directories " +
+                "often given to American university students.");
+        stockDescs.add("disney.com is a website operated by Disney Digital Network, a division" +
+                " of The Walt Disney Company, that promotes various Disney properties such as" +
+                " films, television shows, and theme park resorts, and offers entertainment " +
+                "content intended for children and families.");
+        stockDescs.add("Tesla, Inc. is an American electric vehicle and clean energy company " +
+                "based in Austin, Texas. Tesla designs and manufactures electric cars, battery " +
+                "energy storage from home to grid-scale, solar panels and solar roof tiles, and " +
+                "related products and services.");
+        stockDescs.add("Exxon Mobil Corporation, stylized as ExxonMobil, is an American " +
+                "multinational oil and gas corporation headquartered in Irving, Texas. " +
+                "It is the largest direct descendant of John D. Rockefeller's Standard Oil, " +
+                "and was formed on November 30, 1999, by the merger of Exxon and Mobil.");
+        stockDescs.add("Nvidia Corporation is an American multinational technology company " +
+                "incorporated in Delaware and based in Santa Clara, California. It is a fabless " +
+                "company which designs graphics processing units for the gaming and professional " +
+                "markets, as well as system on a chip units for the mobile computing and " +
+                "automotive market.");
+        stockDescs.add("Qualcomm is an American multinational corporation headquartered in San" +
+                " Diego, California, and incorporated in Delaware. It creates semiconductors," +
+                " software, and services related to wireless technology. It owns patents critical" +
+                " to the 5G, 4G, CDMA2000, TD-SCDMA and WCDMA mobile communications standards.");
+        stockDescs.add("Netflix, Inc. is an American subscription streaming service and production" +
+                " company. Launched on August 29, 1997, it offers a library of films and television" +
+                " series through distribution deals as well as its own productions, known as " +
+                "Netflix Originals.");
+        stockDescs.add("Micron Technology, Inc. is an American producer of computer memory and" +
+                " computer data storage including dynamic random-access memory, flash memory," +
+                " and USB flash drives. It is headquartered in Boise, Idaho. Its consumer " +
+                "products are marketed under the brands Crucial and Ballistix.");
 
         //stock values (for now rnd between 50 and 200)
         List<List<Double>> stockValues = new ArrayList<>();
