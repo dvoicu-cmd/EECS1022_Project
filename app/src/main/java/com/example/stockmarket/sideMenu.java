@@ -1,5 +1,8 @@
 package com.example.stockmarket;
 
+public class sideMenu {
+
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
