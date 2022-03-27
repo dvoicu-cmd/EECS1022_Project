@@ -53,6 +53,6 @@ public class StockActivity extends AppCompatActivity {
         TextView description = (TextView) findViewById(R.id.description);
         description.setText( stock.getDescription());
         TextView stockNameView = (TextView) findViewById(R.id.stockName);
-        stockNameView.setText(stock.getName());
+        stockNameView.setText(stock.getName()+" stock in 12 months");
     }
 }

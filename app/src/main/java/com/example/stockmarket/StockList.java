@@ -86,7 +86,7 @@ public class StockList {
         for (int i=0; i<stockNames.size(); i++){
             ArrayList<Double> stockMonthlyValues = new ArrayList<>();
             for (int j=0; j<12; j++)
-                stockMonthlyValues.add( (new Random().nextInt(15000) + 5000) /100.0);
+                stockMonthlyValues.add( (new Random().nextInt(100000) + 1500) /100.0);
             stockValues.add(stockMonthlyValues);
         }
         for (int i = 0; i< stockNames.size(); i++)
