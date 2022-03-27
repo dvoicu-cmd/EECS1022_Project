@@ -38,13 +38,16 @@ public class StockActivity extends AppCompatActivity {
 
         DataPoint[] datapoints = new DataPoint[12];
         for (int i=0;i<12;i++){
-            datapoints[i] = new DataPoint(i, stock.getValues().get(i));
+            datapoints[i] = new DataPoint(i+1, stock.getValues().get(i));
         }
         LineGraphSeries<DataPoint> series = new LineGraphSeries<>(datapoints);
 
         graphView.setTitle(stock.getName());
         graphView.setTitleColor(R.color.purple_200);
         graphView.setTitleTextSize(30);
+        graphView.getViewport().setXAxisBoundsManual(true);
+        graphView.getViewport().setMinX(0);
+        graphView.getViewport().setMaxX(12);
         graphView.addSeries(series);
 
         TextView description = (TextView) findViewById(R.id.description);
