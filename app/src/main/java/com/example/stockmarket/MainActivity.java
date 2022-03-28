@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,7 +14,6 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -28,15 +26,21 @@ public class MainActivity extends AppCompatActivity {
     private ArrayAdapter adapter; //Array Adaptor for the list
 
     //Activity Data
-    ArrayList<String> stockList = data.returnStockList(); //The list of stocks
-    ArrayList<String> bookMarks = data.returnBookMarks();
-    boolean bootStatus = data.firstBootState();
+    ArrayList<String> stockList = data.getStockList();
+    ArrayList<String> bookMarks;
+    boolean temp = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         //Set the activity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //Get bundle of inputted data and apply it
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            temp = extras.getBoolean("temp");
+        }
 
         /**
          * Implementation for scrollable list
@@ -85,11 +89,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) { //The event
                 Intent i = new Intent(getApplicationContext(), BookMarkActivity.class);
-                i.putExtra("bookMarks", data.returnBookMarks());
-                i.putExtra("bootStatus",data.firstBootState());
+                i.putExtra("bookMarks", data.getBookMarks());
+                i.putExtra("temp", true);
                 startActivity(i);
             }
         });
+
+        //This is no longer the initial boot up
+
     }
 
     public void stockClickHandler(View v){
@@ -98,10 +105,9 @@ public class MainActivity extends AppCompatActivity {
         Intent i = new Intent(getApplicationContext(),StockActivity.class);
         i.putExtra("stockName",stockName);
         i.putExtra("bookMarks",bookMarks);
-        i.putExtra("bootStatus",bootStatus);
         startActivity(i);
 
-    } //End of onCreate
+    }
 
 }//End of Main Activity
 

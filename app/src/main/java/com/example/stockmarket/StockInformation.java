@@ -5,8 +5,6 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.util.ArrayList;
-
 public class StockInformation extends AppCompatActivity {
 
     //Initiate the app data
@@ -37,7 +35,7 @@ public class StockInformation extends AppCompatActivity {
     private void returnMain(){
         Intent activity = new Intent(this, MainActivity.class);
         activity.putExtra("stockPos", stockPos);
-        activity.putExtra("bookmarks",data.returnBookMarks());
+        activity.putExtra("bookmarks",data.getBookMarks());
         startActivity(activity);
     }
 

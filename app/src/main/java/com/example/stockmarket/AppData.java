@@ -15,8 +15,6 @@ import java.util.TreeSet;
 public class AppData {
     List stockList = new ArrayList<String>();
     Map bookMarks = new HashMap<Integer,String>(); //Integer = key, String = value, | key = the position of the stock in the arrayList, value = the name of stock.
-    boolean firstBoot = true;
-    String stockName = null;
 
     public AppData(){
         //Add Stocks here
@@ -34,16 +32,7 @@ public class AppData {
         stockList.add("Micron");
     }
 
-    //Methods that control the boot variable
-    public void firstBoot(){
-        firstBoot = false;
-    }
-
-    public boolean firstBootState(){
-        return firstBoot;
-    }
-
-    public ArrayList<String> returnStockList(){
+    public ArrayList<String> getStockList(){
         return (ArrayList) stockList;
     }
 
@@ -64,7 +53,7 @@ public class AppData {
     }
 
     //Returns a list of bookedMarked stocks
-    public ArrayList<String> returnBookMarks(){
+    public ArrayList<String> getBookMarks(){
         ArrayList<String> outPut = new ArrayList(); //List to output
         //Fill an array list with the values of book marks then return it
         for(int i = 0; i<stockList.size(); i++){
@@ -92,5 +81,4 @@ public class AppData {
                 }
             }
     }
-
 }
