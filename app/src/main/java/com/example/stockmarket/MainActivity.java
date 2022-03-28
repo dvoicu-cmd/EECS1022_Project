@@ -15,18 +15,22 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
+    //Initiate the app data class
+    AppData data = new AppData();
+
+    //For List view on layout
     ListView listView; //List view on layout
     private ArrayAdapter adapter; //Array Adaptor for the list
-    AppData data = new AppData(); //Initiate the app data
-    ArrayList<String> stockList = data.returnStockList();
 
-    ArrayList<String> s;
-    boolean bo;
-
+    //Activity Data
+    ArrayList<String> stockList = data.returnStockList(); //The list of stocks
+    ArrayList<String> bookMarks = data.returnBookMarks();
+    boolean bootStatus = data.firstBootState();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,8 +61,9 @@ public class MainActivity extends AppCompatActivity {
         //Create the list
         theFilter.addTextChangedListener(new TextWatcher() {
             @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
+            }
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -66,9 +71,10 @@ public class MainActivity extends AppCompatActivity {
             }
 
             @Override
-            public void afterTextChanged(Editable editable) {}
-        });
+            public void afterTextChanged(Editable editable) {
 
+            }
+        });
 
         /**
          * OnClick handler methods
@@ -78,72 +84,24 @@ public class MainActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) { //The event
-                openSideMenu();
-            }
-        });
-        //When a list element is clicked
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                openStockInformation(position);
+                Intent i = new Intent(getApplicationContext(), BookMarkActivity.class);
+                i.putExtra("bookMarks", data.returnBookMarks());
+                i.putExtra("bootStatus",data.firstBootState());
+                startActivity(i);
             }
         });
     }
-
-
-        /**
-         * Handle the data after there was a click (if there is any)
-         */
 
     public void stockClickHandler(View v){
         TextView stock = (TextView) v;
         CharSequence stockName = stock.getText();
         Intent i = new Intent(getApplicationContext(),StockActivity.class);
         i.putExtra("stockName",stockName);
+        i.putExtra("bookMarks",bookMarks);
+        i.putExtra("bootStatus",bootStatus);
         startActivity(i);
 
     } //End of onCreate
-
-    /**
-     * Methods that are used for changing activities and passing data through the activities
-     */
-
-
-
-    /*
-     * DATA OUTPUTS
-     */
-
-    //Open SideMenu
-    public void openSideMenu(){
-        Intent activity = new Intent(this, SideMenu.class);
-        //de bug: add facebook to list
-        data.addToBookmark(4);
-        activity.putExtra("bookmarks", data.returnBookMarks());
-        activity.putExtra("firstboot",data.firstBootState());
-        startActivity(activity);
-
-    }
-
-    public void openStockInformation(int position){
-        Intent activity = new Intent(this, StockInformation.class);
-        activity.putExtra("stockPos",position);
-        activity.putExtra("bookmarks",data.returnBookMarks());
-        startActivity(activity);
-    }
-
-
-    /*
-     * DATA INPUTS
-     */
-    private void checkOfData(){
-        Bundle extras = getIntent().getExtras();
-        if (extras != null) {
-            s = extras.getStringArrayList("bookmarks");
-            bo = extras.getBoolean("firstboot");
-        }
-    }
-
 
 }//End of Main Activity
 

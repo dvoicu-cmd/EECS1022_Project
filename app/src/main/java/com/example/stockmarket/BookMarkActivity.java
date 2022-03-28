@@ -10,7 +10,7 @@ import android.widget.TextView;
 public class BookMarkActivity extends AppCompatActivity {
     int number = 0;
     String[] stockList = {"Apple" , "Tesla" , "Google" , "Amazon"};
-    Button btn = (Button) findViewById(R.id.button2);
+    //Button btn = (Button) findViewById(R.id.button2);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

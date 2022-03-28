@@ -16,6 +16,7 @@ public class AppData {
     List stockList = new ArrayList<String>();
     Map bookMarks = new HashMap<Integer,String>(); //Integer = key, String = value, | key = the position of the stock in the arrayList, value = the name of stock.
     boolean firstBoot = true;
+    String stockName = null;
 
     public AppData(){
         //Add Stocks here
@@ -37,6 +38,7 @@ public class AppData {
     public void firstBoot(){
         firstBoot = false;
     }
+
     public boolean firstBootState(){
         return firstBoot;
     }

@@ -14,9 +14,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.StockMarket" >
         <activity
-            android:name=".StockActivity"
-            android:exported="true"/>
-        <activity
             android:name=".MainActivity"
             android:exported="true" >
             <intent-filter>
@@ -25,11 +22,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SideMenu"
-            android:exported="true">
-        </activity>
+            android:name=".StockActivity"
+            android:exported="true"/>
         <activity
-            android:name=".StockInformation"
+            android:name=".BookMarkActivity"
             android:exported="true">
         </activity>
     </application>
