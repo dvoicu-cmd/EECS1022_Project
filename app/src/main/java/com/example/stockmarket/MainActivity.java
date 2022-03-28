@@ -22,13 +22,9 @@ public class MainActivity extends AppCompatActivity {
     AppData data = new AppData();
 
     //For List view on layout
-    ListView listView; //List view on layout
     private ArrayAdapter adapter; //Array Adaptor for the list
 
-    //Activity Data
     ArrayList<String> stockList = data.getStockList();
-    ArrayList<String> bookMarks;
-    boolean temp = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         //Get bundle of inputted data and apply it
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
-            temp = extras.getBoolean("temp");
+            data.storeBookMarks(extras.getStringArrayList("bookMarks"));
         }
 
         /**
@@ -90,13 +86,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) { //The event
                 Intent i = new Intent(getApplicationContext(), BookMarkActivity.class);
                 i.putExtra("bookMarks", data.getBookMarks());
-                i.putExtra("temp", true);
                 startActivity(i);
             }
         });
-
-        //This is no longer the initial boot up
-
     }
 
     public void stockClickHandler(View v){
@@ -104,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
         CharSequence stockName = stock.getText();
         Intent i = new Intent(getApplicationContext(),StockActivity.class);
         i.putExtra("stockName",stockName);
-        i.putExtra("bookMarks",bookMarks);
+        i.putExtra("bookMarks", data.getBookMarks());
         startActivity(i);
 
     }

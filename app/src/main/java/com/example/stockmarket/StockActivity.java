@@ -2,6 +2,7 @@ package com.example.stockmarket;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.widget.TextView;
 
 import com.jjoe64.graphview.GraphView;
@@ -51,6 +52,7 @@ public class StockActivity extends AppCompatActivity {
         graphView.addSeries(series);
 
         TextView description = (TextView) findViewById(R.id.description);
+        description.setMovementMethod(new ScrollingMovementMethod());
         description.setText( stock.getDescription());
         TextView stockNameView = (TextView) findViewById(R.id.stockName);
         stockNameView.setText(stock.getName()+" stock in 12 months");

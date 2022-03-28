@@ -1,90 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-tools:context=".StockActivity">
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".StockActivity">
 
-<!--line graph view where we will
+    <!--line graph view where we will
     be displaying our data-->
 
     <com.jjoe64.graphview.GraphView
         android:id="@+id/idGraphView"
-        android:layout_width="wrap_content"
-        android:layout_height="264dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="102dp"
-        android:layout_marginEnd="30dp" />
-
-    <Button
-        android:id="@+id/closeButton"
-        android:layout_width="67dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="336dp"
-        android:layout_marginBottom="672dp"
-        android:backgroundTint="@android:color/black"
-        android:text="@string/closeButton" />
-
-    <TextView
-        android:id="@+id/stockName"
-        android:layout_width="wrap_content"
-        android:layout_height="55dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="88dp"
-        android:layout_marginEnd="88dp"
-        android:layout_marginBottom="634dp"
-        android:gravity="center_horizontal"
-        android:text="TextView"
-        android:textSize="10pt"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/description"
-        android:layout_width="wrap_content"
-        android:layout_height="250dp"
-        android:layout_below="@+id/idGraphView"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="31dp"
-        android:layout_marginEnd="49dp"
-        android:layout_marginBottom="84dp"
-        android:text="TextView"
-        android:textSize="7pt" />
-
-    <Button
-        android:id="@+id/compareButton"
-        android:layout_width="141dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="92dp"
-        android:layout_marginBottom="32dp"
-        android:layout_toStartOf="@+id/bookmarkButton"
-        android:backgroundTint="@android:color/black"
-        android:text="@string/compareButton" />
+        android:layout_width="348dp"
+        android:layout_height="262dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.462" />
 
     <Button
         android:id="@+id/bookmarkButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginTop="4dp"
         android:backgroundTint="@android:color/black"
-        android:text="@string/bookmarkButton" />
+        android:text="@string/bookmarkButton"
+        app:layout_constraintEnd_toEndOf="@+id/description"
+        app:layout_constraintTop_toBottomOf="@+id/description" />
 
-</RelativeLayout>
+    <Button
+        android:id="@+id/compareButton"
+        android:layout_width="141dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:backgroundTint="@android:color/black"
+        android:text="@string/compareButton"
+        app:layout_constraintStart_toStartOf="@+id/description"
+        app:layout_constraintTop_toBottomOf="@+id/description" />
+
+    <TextView
+        android:id="@+id/stockName"
+        android:layout_width="wrap_content"
+        android:layout_height="55dp"
+        android:gravity="center_horizontal"
+        android:text="TextView"
+        android:textSize="10pt"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/idGraphView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="295dp"
+        android:layout_height="71dp"
+        android:scrollbars="vertical"
+        android:text="TextView"
+        android:textSize="7pt"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/idGraphView"
+        app:layout_constraintVertical_bias="0.043" />
+
+    <Button
+        android:id="@+id/closeButton"
+        android:layout_width="67dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@android:color/black"
+        android:text="@string/closeButton"
+        app:layout_constraintBottom_toTopOf="@+id/stockName"
+        app:layout_constraintEnd_toStartOf="@+id/stockName"
+        app:layout_constraintHorizontal_bias="0.708"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
