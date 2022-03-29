@@ -55,8 +55,6 @@ public class BookMarkActivity extends AppCompatActivity {
 
         //Process the bookmark data here
 
-        data.addToBookmark(4);
-
         adapter = new ArrayAdapter(BookMarkActivity.this, R.layout.list_item_layout, data.getBookMarks());
         listView.setAdapter(adapter);
 

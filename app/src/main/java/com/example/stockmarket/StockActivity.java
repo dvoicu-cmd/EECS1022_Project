@@ -65,6 +65,7 @@ public class StockActivity extends AppCompatActivity {
         stockNameView.setText(stock.getName()+" stock in 12 months");
 
         Button btn = (Button) findViewById(R.id.bookmarkButton);
+        Button backBtn = (Button) findViewById(R.id.closeButton);
         //check if in bookmark
         updateBookBtn(btn);
 
@@ -83,11 +84,20 @@ public class StockActivity extends AppCompatActivity {
             }
         });
 
+        backBtn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                i.putExtra("bookMarks", data.getBookMarks());
+                startActivity(i);
+            }
+        });
+
 
     }
 
     private void updateBookBtn(Button btn){
-        if(data.getBookMarks().contains(stockName)){
+        if(data.contains(stockName)){
             btn.setText("Remove Bookmark");
         }
         else{

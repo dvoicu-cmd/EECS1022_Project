@@ -15,6 +15,7 @@ import java.util.TreeSet;
 public class AppData {
     List stockList = new ArrayList<String>();
     Map bookMarks = new HashMap<Integer,String>(); //Integer = key, String = value, | key = the position of the stock in the arrayList, value = the name of stock.
+    Set bookMarksSet = new HashSet<String>();
 
     public AppData(){
         //Add Stocks here
@@ -36,30 +37,43 @@ public class AppData {
         return (ArrayList) stockList;
     }
 
-    //Adds a stock at a given position value to the bookmark map
-    //v = position value of the array list
-    public void addToBookmark(int v){
-        //First extract data from stockList with given input
-        Integer value = v;
-        String key = (String) stockList.get(v);
-        //Then put the values into the map
-        bookMarks.put(value,key);
+    public boolean contains(String s){
+        boolean condition = false;
+        bookMarksSet.clear();
+        for(int i = 0; i< stockList.size(); i++){
+            if(bookMarks.get(i) != null){
+                bookMarksSet.add(bookMarks.get(i));
+            }
+        }
+        condition = bookMarksSet.contains(s);
+        return condition;
     }
 
-    public void addToBookmark(String k){
-        String key = k;
-        Integer value = stockList.indexOf(key);
-        bookMarks.put(value,key);
+    //Adds a stock at a given position value to the bookmark map
+    //v = position value of the array list
+    public void addToBookmark(int k){
+        //First extract data from stockList with given input
+        Integer key = k;
+        String value = (String) stockList.get(k);
+        //Then put the values into the map
+        bookMarks.put(key,value);
+    }
+
+    public void addToBookmark(String v){
+        String value = v;
+        Integer key = stockList.indexOf(v);
+        bookMarks.put(key,value);
     }
 
     //Removes a stock at a given position value to the bookmark map
-    public void removeFromBookmark(int v){
-        Integer value = v;
-        bookMarks.remove(v);
+    public void removeFromBookmark(int k){
+        Integer key = k;
+        bookMarks.remove(key);
     }
 
-    public void removeFromBookmark(String k){
-        String key = k;
+    public void removeFromBookmark(String v){
+        String value = v;
+        Integer key = stockList.indexOf(value);
         bookMarks.remove(key);
     }
 
@@ -67,7 +81,7 @@ public class AppData {
     public ArrayList<String> getBookMarks(){
         ArrayList<String> outPut = new ArrayList(); //List to output
         //Fill an array list with the values of book marks then return it
-        for(int i = 0; i<stockList.size(); i++){
+        for(int i = 0; i<=stockList.size(); i++){
             if(bookMarks.get(i) != null){
                 outPut.add((String)bookMarks.get(i));
             }
