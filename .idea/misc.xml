@@ -6,12 +6,13 @@
         <entry key="..\:/Users/Saheb/AndroidStudioProjects/EECS1022_Project/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.14427083333333332" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.14427083333333332" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.3557983398437501" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.18970144485991547" />
         <entry key="app/src/main/res/layout/activity_stock.xml" value="0.2462280273437499" />
         <entry key="app/src/main/res/layout/book_mark (ACT).xml" value="0.109375" />
         <entry key="app/src/main/res/layout/book_mark.xml" value="0.22691802978515624" />
-        <entry key="app/src/main/res/layout/list_item_layout.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/list_item_layout.xml" value="0.1978210449218751" />
         <entry key="app/src/main/res/layout/popup_menu.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/stock_information.xml" value="0.17604166666666668" />
       </map>
     </option>
   </component>
