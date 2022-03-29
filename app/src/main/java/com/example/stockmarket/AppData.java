@@ -46,10 +46,21 @@ public class AppData {
         bookMarks.put(value,key);
     }
 
+    public void addToBookmark(String k){
+        String key = k;
+        Integer value = stockList.indexOf(key);
+        bookMarks.put(value,key);
+    }
+
     //Removes a stock at a given position value to the bookmark map
     public void removeFromBookmark(int v){
         Integer value = v;
         bookMarks.remove(v);
+    }
+
+    public void removeFromBookmark(String k){
+        String key = k;
+        bookMarks.remove(key);
     }
 
     //Returns a list of bookedMarked stocks

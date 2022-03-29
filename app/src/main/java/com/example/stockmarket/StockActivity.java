@@ -1,8 +1,12 @@
 package com.example.stockmarket;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.jjoe64.graphview.GraphView;
@@ -17,15 +21,18 @@ public class StockActivity extends AppCompatActivity {
 
     GraphView graphView;
     String stockName;
+    AppData data = new AppData();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stock);
 
+        //get data:
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             stockName = extras.getString("stockName");
+            data.storeBookMarks(extras.getStringArrayList("bookMarks"));
         }
 
         graphView = findViewById(R.id.idGraphView);
@@ -56,5 +63,36 @@ public class StockActivity extends AppCompatActivity {
         description.setText( stock.getDescription());
         TextView stockNameView = (TextView) findViewById(R.id.stockName);
         stockNameView.setText(stock.getName()+" stock in 12 months");
+
+        Button btn = (Button) findViewById(R.id.bookmarkButton);
+        //check if in bookmark
+        updateBookBtn(btn);
+
+        //Bookmark button
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(btn.getText() == "Remove Bookmark"){
+                    data.removeFromBookmark(stockName);
+                    updateBookBtn(btn);
+                }
+                else if (btn.getText() == "Add Bookmark"){
+                    data.addToBookmark(stockName);
+                    updateBookBtn(btn);
+                }
+            }
+        });
+
+
     }
+
+    private void updateBookBtn(Button btn){
+        if(data.getBookMarks().contains(stockName)){
+            btn.setText("Remove Bookmark");
+        }
+        else{
+            btn.setText("Add Bookmark");
+        }
+    }
+
 }

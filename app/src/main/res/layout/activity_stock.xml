@@ -24,21 +24,21 @@
         android:id="@+id/bookmarkButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
         android:backgroundTint="@android:color/black"
         android:text="@string/bookmarkButton"
-        app:layout_constraintEnd_toEndOf="@+id/description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/description" />
 
     <Button
         android:id="@+id/compareButton"
         android:layout_width="141dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
         android:backgroundTint="@android:color/black"
         android:text="@string/compareButton"
-        app:layout_constraintStart_toStartOf="@+id/description"
-        app:layout_constraintTop_toBottomOf="@+id/description" />
+        android:visibility="invisible"
+        tools:layout_editor_absoluteX="131dp"
+        tools:layout_editor_absoluteY="684dp" />
 
     <TextView
         android:id="@+id/stockName"
