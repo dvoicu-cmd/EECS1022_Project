@@ -11,73 +11,67 @@
 
     <com.jjoe64.graphview.GraphView
         android:id="@+id/idGraphView"
-        android:layout_width="348dp"
-        android:layout_height="262dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="327dp"
+        android:layout_height="166dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/description"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.462" />
+        app:layout_constraintTop_toBottomOf="@+id/stockName" />
 
     <Button
         android:id="@+id/bookmarkButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="224dp"
+        android:layout_height="41dp"
+        android:layout_marginBottom="95dp"
         android:backgroundTint="@android:color/black"
         android:text="@string/bookmarkButton"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/description" />
 
-    <Button
-        android:id="@+id/compareButton"
-        android:layout_width="141dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@android:color/black"
-        android:text="@string/compareButton"
-        android:visibility="invisible"
-        tools:layout_editor_absoluteX="131dp"
-        tools:layout_editor_absoluteY="684dp" />
-
     <TextView
         android:id="@+id/stockName"
-        android:layout_width="wrap_content"
-        android:layout_height="55dp"
+        android:layout_width="292dp"
+        android:layout_height="23dp"
+        android:layout_marginTop="16dp"
         android:gravity="center_horizontal"
         android:text="TextView"
-        android:textSize="10pt"
+        android:textSize="7pt"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/idGraphView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/closeButton" />
 
     <TextView
         android:id="@+id/description"
-        android:layout_width="295dp"
-        android:layout_height="71dp"
+        android:layout_width="316dp"
+        android:layout_height="103dp"
+        android:layout_marginBottom="8dp"
         android:scrollbars="vertical"
         android:text="TextView"
-        android:textSize="7pt"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textSize="6pt"
+        app:layout_constraintBottom_toTopOf="@+id/bookmarkButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintHorizontal_bias="0.538"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/idGraphView"
-        app:layout_constraintVertical_bias="0.043" />
+        app:layout_constraintTop_toBottomOf="@+id/idGraphView" />
 
     <Button
         android:id="@+id/closeButton"
-        android:layout_width="67dp"
-        android:layout_height="wrap_content"
+        android:layout_width="47dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="24dp"
         android:backgroundTint="@android:color/black"
         android:text="@string/closeButton"
-        app:layout_constraintBottom_toTopOf="@+id/stockName"
-        app:layout_constraintEnd_toStartOf="@+id/stockName"
-        app:layout_constraintHorizontal_bias="0.708"
+        android:textColor="#FFFFFF"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
