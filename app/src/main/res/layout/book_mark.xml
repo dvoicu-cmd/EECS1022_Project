@@ -64,7 +64,8 @@
         android:text="Saved Bookmarks"
         android:textAlignment="center"
         android:textSize="12sp"
-        app:layout_constraintStart_toStartOf="@+id/searchFilter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
