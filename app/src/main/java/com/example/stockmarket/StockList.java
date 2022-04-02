@@ -4,13 +4,14 @@ import java.util.*;
 
 public class StockList {
     private List<Stock> stocks;
+    private static List<String> stockNames = new ArrayList<>();
     private static StockList instance;
+    private static List<List<Double>> stockValues = new ArrayList<>();
 
     private StockList(){
         stocks = new ArrayList<>();
 
         //names
-        List<String> stockNames = new ArrayList<>();
         stockNames.add("Intel");
         stockNames.add("Microsoft");
         stockNames.add("Apple");
@@ -82,7 +83,7 @@ public class StockList {
                 "products are marketed under the brands Crucial and Ballistix.");
 
         //stock values (for now rnd between 50 and 200)
-        List<List<Double>> stockValues = new ArrayList<>();
+        //List<List<Double>> stockValues = new ArrayList<>();
         for (int i=0; i<stockNames.size(); i++){
             ArrayList<Double> stockMonthlyValues = new ArrayList<>();
             for (int j=0; j<12; j++)
@@ -92,6 +93,12 @@ public class StockList {
         for (int i = 0; i< stockNames.size(); i++)
            stocks.add(new Stock(stockNames.get(i), stockDescs.get(i), stockValues.get(i)));
     }
+
+    public static double getStockValue(String i){
+        int index = stockNames.indexOf(i);
+        return stockValues.get(index).get(11);
+    }
+
 
     public static StockList getInstance(){
         if (instance == null)

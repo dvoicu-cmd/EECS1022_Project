@@ -22,6 +22,7 @@ public class StockActivity extends AppCompatActivity {
     GraphView graphView;
     String stockName;
     AppData data = new AppData();
+    DataPoint[] dataPoints = new DataPoint[12];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,11 +45,11 @@ public class StockActivity extends AppCompatActivity {
             if (s.getName().equals(stockName))
                 stock = s;
 
-        DataPoint[] datapoints = new DataPoint[12];
+
         for (int i=0;i<12;i++){
-            datapoints[i] = new DataPoint(i+1, stock.getValues().get(i));
+            dataPoints[i] = new DataPoint(i+1, stock.getValues().get(i));
         }
-        LineGraphSeries<DataPoint> series = new LineGraphSeries<>(datapoints);
+        LineGraphSeries<DataPoint> series = new LineGraphSeries<>(dataPoints);
 
         graphView.setTitle(stock.getName());
         graphView.setTitleColor(R.color.purple_200);
@@ -93,7 +94,9 @@ public class StockActivity extends AppCompatActivity {
             }
         });
 
-
+        //This is where the stock value is shown
+        TextView stockValue = (TextView) findViewById(R.id.stockValue);
+        stockValue.setText("Current Value: " + StockList.getStockValue(stockName));
     }
 
     private void updateBookBtn(Button btn){
