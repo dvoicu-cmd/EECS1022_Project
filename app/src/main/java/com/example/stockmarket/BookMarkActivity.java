@@ -27,6 +27,11 @@ public class BookMarkActivity extends AppCompatActivity {
     private ArrayAdapter adapter;
 
     @Override
+    public void onBackPressed() {
+
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         //Set activity
         super.onCreate(savedInstanceState);

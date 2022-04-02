@@ -27,6 +27,11 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<String> stockList = data.getStockList();
 
     @Override
+    public void onBackPressed() {
+
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         //Set the activity
         super.onCreate(savedInstanceState);
