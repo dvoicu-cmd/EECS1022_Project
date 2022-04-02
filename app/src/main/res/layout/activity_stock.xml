@@ -11,8 +11,8 @@
 
     <com.jjoe64.graphview.GraphView
         android:id="@+id/idGraphView"
-        android:layout_width="321dp"
-        android:layout_height="245dp"
+        android:layout_width="307dp"
+        android:layout_height="235dp"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toTopOf="@+id/description"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,9 +23,9 @@
     <Button
         android:id="@+id/bookmarkButton"
         android:layout_width="223dp"
-        android:layout_height="47dp"
+        android:layout_height="48dp"
         android:layout_marginTop="8dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="32dp"
         android:backgroundTint="@android:color/black"
         android:text="@string/bookmarkButton"
         android:textColor="#FFFFFF"
@@ -52,15 +52,14 @@
 
     <TextView
         android:id="@+id/description"
-        android:layout_width="324dp"
-        android:layout_height="211dp"
-        android:layout_marginBottom="8dp"
+        android:layout_width="309dp"
+        android:layout_height="192dp"
         android:scrollbars="vertical"
         android:text="TextView"
         android:textSize="6pt"
         app:layout_constraintBottom_toTopOf="@+id/bookmarkButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.597"
+        app:layout_constraintHorizontal_bias="0.578"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/idGraphView" />
 
