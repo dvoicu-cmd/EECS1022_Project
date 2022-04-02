@@ -11,8 +11,8 @@
 
     <com.jjoe64.graphview.GraphView
         android:id="@+id/idGraphView"
-        android:layout_width="307dp"
-        android:layout_height="235dp"
+        android:layout_width="312dp"
+        android:layout_height="171dp"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toTopOf="@+id/description"
         app:layout_constraintEnd_toEndOf="parent"
@@ -25,7 +25,7 @@
         android:layout_width="223dp"
         android:layout_height="48dp"
         android:layout_marginTop="8dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="42dp"
         android:backgroundTint="@android:color/black"
         android:text="@string/bookmarkButton"
         android:textColor="#FFFFFF"
@@ -37,9 +37,9 @@
 
     <TextView
         android:id="@+id/stockName"
-        android:layout_width="292dp"
-        android:layout_height="23dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="288dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="5dp"
         android:gravity="center_horizontal"
         android:text="TextView"
         android:textSize="7pt"
@@ -52,14 +52,14 @@
 
     <TextView
         android:id="@+id/description"
-        android:layout_width="309dp"
-        android:layout_height="192dp"
+        android:layout_width="297dp"
+        android:layout_height="150dp"
         android:scrollbars="vertical"
         android:text="TextView"
         android:textSize="6pt"
         app:layout_constraintBottom_toTopOf="@+id/bookmarkButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.578"
+        app:layout_constraintHorizontal_bias="0.59"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/idGraphView" />
 
@@ -75,14 +75,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
+    <TextView
         android:id="@+id/stockValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="24dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Name"
-        tools:layout_editor_absoluteX="113dp"
-        tools:layout_editor_absoluteY="39dp" />
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/stockName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/closeButton"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

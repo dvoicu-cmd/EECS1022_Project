@@ -11,8 +11,8 @@
 
     <com.jjoe64.graphview.GraphView
         android:id="@+id/idGraphView"
-        android:layout_width="482dp"
-        android:layout_height="179dp"
+        android:layout_width="473dp"
+        android:layout_height="165dp"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toTopOf="@+id/description"
         app:layout_constraintEnd_toEndOf="parent"
@@ -31,13 +31,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.499"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/description" />
+        app:layout_constraintTop_toBottomOf="@+id/description"
+        tools:ignore="TouchTargetSizeCheck" />
 
     <TextView
         android:id="@+id/stockName"
         android:layout_width="292dp"
         android:layout_height="23dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="46dp"
         android:layout_marginBottom="4dp"
         android:gravity="center_horizontal"
         android:text="TextView"
@@ -45,14 +47,13 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/idGraphView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/closeButton"
         app:layout_constraintTop_toBottomOf="@+id/closeButton" />
 
     <TextView
         android:id="@+id/description"
-        android:layout_width="480dp"
-        android:layout_height="87dp"
+        android:layout_width="484dp"
+        android:layout_height="81dp"
         android:scrollbars="vertical"
         android:text="TextView"
         android:textSize="6pt"
@@ -72,6 +73,21 @@
         android:text="@string/closeButton"
         android:textColor="#FFFFFF"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/stockValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        app:layout_constraintBottom_toTopOf="@+id/idGraphView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/stockName"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
